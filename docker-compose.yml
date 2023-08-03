@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  pytorch:
+    build:
+      context: .
+      dockerfile: docker/diffusers-pytorch-cuda/Dockerfile
+    shm_size: '8gb'
+    container_name: 'diffusers'
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/app
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

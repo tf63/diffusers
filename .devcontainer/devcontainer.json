@@ -1,0 +1,17 @@
+{
+    "name": "PyTorch",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "pytorch",
+    "workspaceFolder": "/app",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "ms-python.python",
+                "ms-python.black-formatter",
+                "ms-python.flake8",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    }
+}
